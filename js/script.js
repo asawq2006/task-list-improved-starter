@@ -38,6 +38,8 @@
   function addTaskListeners(li) {
     var checkbox = li.querySelector('.check');
     checkbox.addEventListener('click', function(event) {
+      event.preventDefault();
+
       if (li.className === 'checked') {
         li.className = '';
         checkbox.innerHTML = '&#9744;';
@@ -49,6 +51,7 @@
 
     var deleteButton = li.querySelector('.delete');
     deleteButton.addEventListener('click', function(event) {
+      event.preventDefault();
       li.parentNode.removeChild(li);
     });
   }
